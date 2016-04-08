@@ -1,10 +1,10 @@
 
 $("#createTodo").click(function(){
-	var input_id = $("#todoId").val();
-	var input_message = $("#todoMessage").val();
+	var id = $("#todoId").val();
+	var message = $("#todoMessage").val();
 	var data = {
-			id:input_id,
-			message:input_message
+			id:id,
+			message:message
 			};
 	$.ajax({
 		url:"/LAB4/create",
@@ -12,11 +12,8 @@ $("#createTodo").click(function(){
 		contentType: "application/x-www-form-urlencoded; charset=UTF-8",
 		dataType: "json",
 		success: function(data,status,xhr){
-			if(data.code == "Success"){
-				alert("Success!");
-			}else{
-				alert("Error! Message is " + data.message);
-			}
+			alert("Success!");
+
 		},
 		error: function(data,status,xhr){
 			alert(JSON.stringify(data));
@@ -27,13 +24,14 @@ $("#createTodo").click(function(){
 
 $("#getJSON").click(
 			function() {
-				var input_id = $("#todoId_get").val();
+				var id = $("#todoId_get").val();
 				$.ajax({
 					type : 'GET',
-					url : "/LAB4/json/" + input_id,
+					url : "/LAB4/json/" + id,
 					dataType: "json",
 					success : function(data,status,xhr) {
-						alert("Your message is: " + data.message);
+						alert("Success!");
+
 					},
 					error : function(data,status,xhr) {
 						alert(JSON.stringify(data));
@@ -43,13 +41,14 @@ $("#getJSON").click(
 
 $("#getXML").click(
 		function() {
-			var input_id = $("#todoId_get").val();
+			var id = $("#todoId_get").val();
 			$.ajax({
 				type : 'GET',
-				url : "/LAB4/xml/" + input_id,
+				url : "/LAB4/xml/" + id,
 				dataType: "xml",
 				success : function(data,status,xhr) {
-					alert("Your message is: " + data.message);
+					alert("Success!");
+
 				},
 				error : function(data,status,xhr) {
 					alert(JSON.stringify(data));
@@ -76,7 +75,8 @@ $("#getAllXML").click(
 				type : 'GET',
 				url : "/LAB4/all/xml",
 				success : function(data,status,xhr) {
-					alert(data);
+					alert("Success!");
+
 				},
 				error : function(data,status,xhr) {
 					alert(data);
@@ -85,9 +85,9 @@ $("#getAllXML").click(
 		});		
 $("#deleteTodo").click(
 	function() {
-		var input_id = $("#todoId_delete").val();
+		var id = $("#todoId_delete").val();
 		$.ajax({
-			url : "/LAB4/delete/" + input_id,
+			url : "/LAB4/delete/" + id,
 			method : "DELETE",
 			contentType : 'application/octet-stream; charset=utf-8',
 			success: function(data,status,xhr){
