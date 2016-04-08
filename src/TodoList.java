@@ -7,14 +7,18 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 import org.json.JSONObject;
 
-@XmlRootElement(name = "TodoList")
+@XmlRootElement(name = "todoList")
 public class TodoList {
 
-	@XmlElementWrapper(name="Todo")
-	private List<Todo> messages;
+	@XmlElementWrapper(name="todo")
+	private static List<Todo> messages = new ArrayList<Todo>();
 	
-	public List<Todo> getMessages() {
+	public static List<Todo> getMessages() {
 		return messages;
+	}
+	
+	public static void setMessages(List<Todo> p_messages) {
+		messages = p_messages;
 	}
 	
     public List<Todo> findAll() {
@@ -43,5 +47,5 @@ public class TodoList {
 		// TODO Auto-generated method stub
 		
 	}
-
+	
 }

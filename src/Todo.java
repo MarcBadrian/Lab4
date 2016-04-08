@@ -45,4 +45,25 @@ public class Todo {
 		this.timestamp = timestamp;
 	}	
 
+public String toString(){
+	return "Message #" + this.id + ": " + this.todo_message;
 }
+
+//HELPER METHOD TO USE INDEX_OF FOR LIST
+ @Override
+ public boolean equals(Object o) {
+     if(o == null) {
+    	 return false;
+     }else if( o instanceof Todo){
+        int a_id = (Integer) ((Todo) o).getId();
+        if(this.getId() == a_id){
+        	return true;
+        }
+        else {
+        return false;
+        }       
+    }
+     return false;
+    }
+}
+

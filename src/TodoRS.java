@@ -4,7 +4,7 @@ import java.util.Set;
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 
-@ApplicationPath("/Lab4")
+@ApplicationPath("/Todo")
 public class TodoRS extends Application{
 
 	@Override

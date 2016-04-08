@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<title>ToDo Interface</title>
+
+<!-- Bootstrap -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<script type="text/javascript" src="app.js"></script>
+</head>
+<body>
+	<h1 id="todoHeader">Welcome to the ToDo Web Interface!</h1>
+<div> 
+		<h1>CREATE TODO</h1> 
+		<form> 
+			<p>ID: <input id="todoId" type="text"> </p>
+			<p>Message: <input id="todoMessage" type="text"> </p>
+			<br/> 
+			<button id="createTodo" type="button" class="btn btn-lg btn-primary">Create</button> 
+ 		</form> 
+ 	</div>
+ 	<br/>
+ 	<div>
+		<form>
+			<h1>GET TODO</h1>
+			<p>Enter an ID: <input id="todoId_get" type="text"> </p>
+			<br/>
+			<button id="getJSON" type="button" class="btn btn-lg btn-primary">Get - JSON</button>
+			<button id="getXML" type="button" class="btn btn-lg btn-primary">Get - XML</button>
+		</form>
+	</div>
+	<br/>
+ 	<div>
+ 		<h1>GET ALL TODOS</h1>
+		<button id="getAllJSON" type="button" class="btn btn-lg btn-primary">Get All - JSON</button>
+		<button id="getAllXML" type="button" class="btn btn-lg btn-primary">Get All - XML</button>
+	</div>
+	<br>
+	<div>
+		<h1>DELETE TODO</h1>
+		<form>
+		<p>ID: <input id="todoId_delete" type="text"> </p>
+		<br/>
+		<button id="deleteTodo" type="button" class="btn btn-lg btn-primary">Delete</button>
+		</form>
+	</div>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/app.js"></script>
+
+</body>
+</html>
